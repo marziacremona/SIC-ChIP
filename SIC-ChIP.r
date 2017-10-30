@@ -88,7 +88,7 @@ save(peaks,file=paste0("SIC-ChIP_",out,"/",out,"_peaks.RData"))
 ########################
 writeLines('
 Computing shape indices...',stdout())
-peaks.df.index=data.frame(chr=factor(as.vector(chrom(peaks)),levels=c('chr1','chr2','chr3','chr4','chr5','chr6','chr7','chr8','chr9','chr10','chr11','chr12','chr13','chr14','chr15','chr16','chr17','chr18','chr19','chr20','chr21','chr22','chrX')),
+peaks.df.index=data.frame(chr=seqnames(peaks),
                           start=start(peaks),
                           end=end(peaks),
                           width=width(peaks))
